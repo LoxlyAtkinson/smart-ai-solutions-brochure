@@ -2,3 +2,4 @@ node_modules/
 verify/
 content/
 *.log
+.atlas-consulted
