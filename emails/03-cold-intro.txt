@@ -1,0 +1,44 @@
+SUBJECT LINE OPTIONS (pick one, 40 to 60 characters)
+  Where AI usually pays for itself first
+  A question about how [Company] handles enquiries
+  Quick one about your WhatsApp enquiries
+
+PREVIEW TEXT
+  Not a pitch. One question, and a profile you can ignore if the answer is no.
+
+---
+
+Hi [First name],
+
+I build AI systems for South African businesses out of Cape Town, and I spent three years before that selling and implementing point of sale into the retail trade, so I tend to look at a business from the shop floor up rather than the software down.
+
+One question, and you can ignore the rest of this if the answer is no.
+
+When someone messages [Company] on WhatsApp after hours, what happens?
+
+That single question is where I find most of the money in a business. Not because chatbots are clever, but because the enquiry that waits until morning usually goes to whoever answered first. Same story with the follow-up nobody has time for, and the report someone rebuilds by hand every Monday.
+
+If any of that sounds familiar, here is what we do and how we work:
+
+https://loxlyatkinson.github.io/smart-ai-solutions-brochure/
+
+I have not put pricing in it. I would rather look at your actual situation first, which is what the free thirty minute assessment is for. You come out of it knowing the two or three places AI would pay for itself first in your business. If the answer is that it would not, I will say so, and you will have lost half an hour.
+
+If this is not for you, no follow up from me. Just say so and I will leave you alone.
+
+Loxly
+
+Loxly Atkinson
+Founder, Smart AI Solutions
+Cape Town
++27 72 283 1551
+WhatsApp: https://wa.me/27722831551
+smartaisolutions.co.za
+
+---
+
+NOTES FOR SENDING
+  Do NOT attach the PDF on a cold send. Attachments hurt deliverability and get filtered. Link only.
+  Replace the WhatsApp question with something specific to their business if you know it. Generic version converts worse.
+  Keep the "no follow up from me" line. It is the reason people reply.
+  POPIA: cold B2B email to a business address is permitted, but the opt-out must be honoured immediately and you must be able to show where the address came from. Keep a note of the source against each address.
