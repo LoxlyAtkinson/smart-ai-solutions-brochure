@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8" />
+<title>Smart AI Solutions — Company &amp; Services Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Smart AI Solutions — Company & Services Profile
+   Palette: sampled from the Smart AI Solutions logo artwork
+   (cyan #0891b2 family, wordmark ink #15232c) + the site's own
+   light-theme neutral tokens. Typeface: Inter, the site font.
+   A4 rules per ~/.claude/skills/pdf/references/html-to-pdf-brochures.md
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+:root {
+  /* Brand cyan — sampled from the logo mark */
+  --cyan-950: #083344;
+  --cyan-900: #164e63;
+  --cyan-800: #155e75;
+  --cyan-700: #0e7490;
+  --cyan-600: #0891b2;   /* PRIMARY */
+  --cyan-500: #06b6d4;
+  --cyan-400: #22d3ee;   /* BRIGHT ACCENT */
+  --cyan-300: #67e8f9;
+  --cyan-100: #cffafe;
+  --cyan-50:  #ecfeff;
+  --logo-bright: #33dfeb;
+  --ink: #15232c;        /* logo wordmark ink */
+
+  /* Neutrals — the site's own light-theme tokens */
+  --slate-900: #0f172a;
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+  --slate-300: #cbd5e1;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+  --slate-50:  #f8fafc;
+  --white: #ffffff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--slate-600);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- PAGE SYSTEM (fixed height; never min-height) ---------- */
+.page {
+  width: 210mm;
+  height: 296mm;
+  padding: 14mm 18mm 22mm;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  page-break-inside: avoid;
+  background: var(--white);
+}
+.page:last-child { page-break-after: auto; }
+
+@page { size: 210mm 297mm; margin: 0; }
+@media print {
+  html, body { background: #fff; margin: 0; padding: 0; }
+  .page { margin: 0; box-shadow: none; }
+}
+@media screen {
+  body { background: #e9eef2; padding: 10mm 0; }
+  .page { margin: 0 auto 8mm; box-shadow: 0 2mm 8mm rgba(8,51,68,.16); }
+}
+
+/* ---------- SHARED FURNITURE ---------- */
+.page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2.4mm;
+  border-bottom: 0.5pt solid var(--slate-200);
+  margin-bottom: 5mm;
+}
+.page-head .brandline {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+}
+.page-head img { height: 7mm; width: auto; display: block; }
+.page-head .sect {
+  font-size: 7pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan-700);
+}
+
+.page-foot {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 10mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 7pt;
+  letter-spacing: 0.06em;
+  color: var(--slate-500);
+  border-top: 0.5pt solid var(--slate-200);
+  padding-top: 2.5mm;
+}
+.page-foot .pnum {
+  font-weight: 600;
+  color: var(--cyan-700);
+}
+
+h1, h2, h3, h4 {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--slate-900);
+  letter-spacing: -0.022em;
+  font-weight: 600;
+}
+.eyebrow {
+  font-size: 7.2pt;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cyan-600);
+  margin-bottom: 2.4mm;
+}
+.section-title {
+  font-size: 18.5pt;
+  line-height: 1.13;
+  margin-bottom: 2.4mm;
+}
+.section-lede {
+  font-size: 9.6pt;
+  line-height: 1.48;
+  color: var(--slate-600);
+  max-width: 150mm;
+  margin-bottom: 4.6mm;
+}
+.rule-accent {
+  width: 15mm;
+  height: 1.1mm;
+  background: linear-gradient(90deg, var(--cyan-600), var(--cyan-400));
+  border-radius: 1mm;
+  margin-bottom: 3.2mm;
+}
+
+/* ---------- COVER ---------- */
+.cover { padding: 0; background: var(--white); }
+.cover-band {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 113mm;
+  background:
+    radial-gradient(120% 150% at 82% 8%, rgba(51,223,235,.55) 0%, rgba(51,223,235,0) 55%),
+    linear-gradient(135deg, var(--cyan-950) 0%, var(--cyan-800) 48%, var(--cyan-600) 100%);
+}
+.cover-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 78%, rgba(255,255,255,.10) 0 2.2mm, rgba(255,255,255,0) 2.4mm),
+    radial-gradient(circle at 36% 42%, rgba(255,255,255,.13) 0 1.6mm, rgba(255,255,255,0) 1.8mm),
+    radial-gradient(circle at 62% 66%, rgba(255,255,255,.10) 0 2.6mm, rgba(255,255,255,0) 2.8mm),
+    radial-gradient(circle at 88% 34%, rgba(255,255,255,.12) 0 1.9mm, rgba(255,255,255,0) 2.1mm);
+}
+.cover-logo {
+  position: absolute;
+  top: 16mm; left: 18mm;
+  width: 62mm;
+  padding: 3.5mm 5mm;
+  background: var(--white);
+  border-radius: 3mm;
+}
+.cover-logo img { width: 100%; display: block; }
+.cover-eyebrow {
+  position: absolute;
+  top: 59mm; left: 18mm;
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyan-300);
+}
+.cover-title {
+  position: absolute;
+  top: 67mm; left: 18mm; right: 24mm;
+  font-size: 23.5pt;
+  line-height: 1.14;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -0.026em;
+}
+.cover-title em { font-style: normal; color: var(--cyan-300); }
+.cover-body {
+  position: absolute;
+  top: 124mm; left: 18mm; right: 36mm;
+}
+.cover-body p {
+  font-size: 11.5pt;
+  line-height: 1.55;
+  color: var(--slate-600);
+}
+.cover-body p strong { color: var(--slate-900); font-weight: 600; }
+.cover-facts {
+  position: absolute;
+  left: 18mm; right: 18mm; top: 158mm;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4mm;
+}
+.fact {
+  background: var(--slate-50);
+  border: 0.5pt solid var(--slate-200);
+  border-top: 1.4mm solid var(--cyan-600);
+  border-radius: 2.5mm;
+  padding: 5mm 5mm 5.5mm;
+}
+.fact .k {
+  font-size: 17pt;
+  font-weight: 600;
+  color: var(--cyan-700);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.5mm;
+}
+.fact .v {
+  font-size: 8pt;
+  line-height: 1.42;
+  color: var(--slate-600);
+}
+.cover-split {
+  position: absolute;
+  left: 18mm; right: 18mm; top: 202mm;
+  border-top: 0.5pt solid var(--slate-200);
+  padding-top: 6mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+}
+.cover-split h4 {
+  font-size: 9pt;
+  color: var(--cyan-700);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2.5mm;
+}
+.cover-split p { font-size: 8.8pt; line-height: 1.5; }
+.cover-foot {
+  position: absolute;
+  left: 18mm; right: 18mm; bottom: 14mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 0.5pt solid var(--slate-200);
+  padding-top: 4mm;
+}
+.cover-foot .w {
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--slate-900);
+  letter-spacing: -0.02em;
+}
+.cover-foot .m { font-size: 8pt; color: var(--slate-500); text-align: right; line-height: 1.5; }
+
+/* ---------- PROFILE PAGE ---------- */
+.profile-top {
+  display: grid;
+  grid-template-columns: 50mm 1fr;
+  gap: 7mm;
+  align-items: start;
+  margin-bottom: 4.5mm;
+}
+.portrait {
+  width: 50mm;
+  height: 57mm;
+  overflow: hidden;
+  border-radius: 3mm;
+  border: 0.5pt solid var(--slate-200);
+  position: relative;
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portrait::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1.4mm;
+  background: linear-gradient(90deg, var(--cyan-600), var(--cyan-400));
+}
+.profile-name {
+  font-size: 20pt;
+  line-height: 1.1;
+  margin-bottom: 1.5mm;
+}
+.profile-role {
+  font-size: 8.4pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan-700);
+  margin-bottom: 3.2mm;
+}
+.profile-hook {
+  font-size: 10pt;
+  line-height: 1.45;
+  color: var(--slate-700);
+  padding-left: 4mm;
+  border-left: 1mm solid var(--cyan-400);
+}
+.prose p { margin-bottom: 2.4mm; font-size: 8.9pt; line-height: 1.5; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--slate-900); font-weight: 600; }
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.4mm;
+  margin: 4mm 0;
+}
+.tl {
+  background: var(--slate-50);
+  border-radius: 2.5mm;
+  border-left: 1mm solid var(--cyan-600);
+  padding: 3.2mm 3.8mm;
+}
+.tl .yr {
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--cyan-700);
+  margin-bottom: 1mm;
+}
+.tl .ttl { font-size: 9pt; font-weight: 600; color: var(--slate-900); line-height: 1.3; margin-bottom: 1mm; }
+.tl .org { font-size: 7.6pt; color: var(--slate-500); line-height: 1.35; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6.5mm; align-items: start; }
+.mini-h {
+  font-size: 9.2pt;
+  font-weight: 600;
+  color: var(--slate-900);
+  margin-bottom: 2mm;
+  padding-bottom: 1.2mm;
+  border-bottom: 0.5pt solid var(--slate-200);
+}
+ul.ticks { list-style: none; }
+ul.ticks li {
+  position: relative;
+  padding-left: 4.4mm;
+  margin-bottom: 1.5mm;
+  font-size: 8.3pt;
+  line-height: 1.4;
+}
+ul.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 1.5mm;
+  width: 2.2mm; height: 2.2mm;
+  border-radius: 50%;
+  background: var(--cyan-500);
+}
+ul.ticks li strong { color: var(--slate-900); font-weight: 600; }
+
+.callout {
+  margin-top: 4mm;
+  padding: 3.4mm 4.4mm;
+  background: var(--cyan-50);
+  border-left: 1mm solid var(--cyan-600);
+  border-radius: 2mm;
+  font-size: 8.5pt;
+  line-height: 1.44;
+  color: var(--slate-700);
+}
+.callout strong { color: var(--cyan-900); font-weight: 600; }
+
+/* ---------- SERVICE CARDS ---------- */
+.svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.4mm; align-items: start; }
+.svc {
+  background: var(--white);
+  border: 0.5pt solid var(--slate-200);
+  border-radius: 2.5mm;
+  padding: 3.4mm 4mm 3.8mm;
+  position: relative;
+  overflow: hidden;
+}
+.svc::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%;
+  height: 0.9mm;
+  background: linear-gradient(90deg, var(--cyan-600), var(--cyan-400));
+}
+.svc .tag {
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--cyan-700);
+  display: block;
+  margin-bottom: 1.5mm;
+}
+.svc h3 {
+  font-size: 9.9pt;
+  line-height: 1.2;
+  margin-bottom: 1.5mm;
+}
+.svc p { font-size: 8pt; line-height: 1.4; margin-bottom: 2mm; }
+.svc ul { list-style: none; }
+.svc ul li {
+  position: relative;
+  padding-left: 3.6mm;
+  font-size: 7.5pt;
+  line-height: 1.37;
+  margin-bottom: 0.9mm;
+  color: var(--slate-600);
+}
+.svc ul li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 1.4mm;
+  width: 1.6mm; height: 1.6mm;
+  border-radius: 0.4mm;
+  background: var(--cyan-400);
+}
+
+/* ---------- LISTS / TIERS ---------- */
+.tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.4mm; align-items: start; }
+.tier {
+  border: 0.5pt solid var(--slate-200);
+  border-radius: 2.5mm;
+  padding: 3.4mm 3.8mm 3.8mm;
+  background: var(--white);
+}
+.tier.feature { background: var(--cyan-50); border-color: var(--cyan-300); }
+.tier .name {
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--slate-900);
+  margin-bottom: 1mm;
+  line-height: 1.2;
+}
+.tier .who {
+  font-size: 7.1pt;
+  color: var(--cyan-700);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 2.4mm;
+}
+.tier ul { list-style: none; }
+.tier ul li {
+  position: relative;
+  padding-left: 3.6mm;
+  font-size: 7.5pt;
+  line-height: 1.36;
+  margin-bottom: 1.3mm;
+}
+.tier ul li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 1.3mm;
+  width: 1.8mm; height: 1.8mm;
+  border-radius: 50%;
+  background: var(--cyan-500);
+}
+
+.strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+  margin-top: 3mm;
+  align-items: start;
+}
+.step {
+  background: var(--slate-50);
+  border-radius: 2.5mm;
+  padding: 3.2mm 3.4mm 3.6mm;
+  border-top: 1mm solid var(--cyan-500);
+}
+.step .n {
+  font-size: 13pt;
+  font-weight: 600;
+  color: var(--cyan-400);
+  line-height: 1;
+  margin-bottom: 1.5mm;
+}
+.step .t { font-size: 8.6pt; font-weight: 600; color: var(--slate-900); margin-bottom: 1.2mm; line-height: 1.25; }
+.step .d { font-size: 7.2pt; line-height: 1.36; color: var(--slate-600); }
+
+/* ---------- SUBJECTS ---------- */
+.subj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.2mm 6mm; align-items: start; }
+.subj {
+  display: grid;
+  grid-template-columns: 8mm 1fr;
+  gap: 2.5mm;
+  align-items: start;
+}
+.subj .num {
+  width: 7mm; height: 7mm;
+  border-radius: 1.8mm;
+  background: linear-gradient(135deg, var(--cyan-700), var(--cyan-500));
+  color: var(--white);
+  font-size: 8.5pt;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.subj h4 { font-size: 9.2pt; line-height: 1.24; margin-bottom: 1.2mm; }
+.subj p { font-size: 7.9pt; line-height: 1.42; color: var(--slate-600); }
+
+.toolbox {
+  margin-top: 4mm;
+  padding: 3.6mm 4.2mm 4mm;
+  background: var(--slate-50);
+  border: 0.5pt solid var(--slate-200);
+  border-radius: 2.5mm;
+}
+.toolbox h4 { font-size: 9pt; margin-bottom: 2.5mm; color: var(--slate-900); }
+.chips { display: flex; flex-wrap: wrap; gap: 1.6mm; }
+.chip {
+  font-size: 7.2pt;
+  line-height: 1;
+  padding: 1.7mm 2.6mm;
+  background: var(--white);
+  border: 0.5pt solid var(--slate-300);
+  border-radius: 1.4mm;
+  color: var(--slate-700);
+  white-space: nowrap;
+}
+.chip.hi { background: var(--cyan-600); border-color: var(--cyan-600); color: var(--white); font-weight: 500; }
+
+/* ---------- WORK / CONTACT ---------- */
+.work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; align-items: start; }
+.work {
+  border: 0.5pt solid var(--slate-200);
+  border-radius: 2.5mm;
+  padding: 3.6mm 4.2mm 4mm;
+  background: var(--white);
+}
+.work .sector {
+  font-size: 6.8pt;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--cyan-700);
+  margin-bottom: 1.5mm;
+}
+.work h3 { font-size: 10.5pt; margin-bottom: 2mm; line-height: 1.2; }
+.work p { font-size: 8.3pt; line-height: 1.46; }
+
+.sectors { display: flex; flex-wrap: wrap; gap: 1.8mm; margin-top: 3mm; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm;
+  margin-top: 5mm;
+}
+.cbox {
+  border: 0.5pt solid var(--slate-200);
+  border-left: 1mm solid var(--cyan-600);
+  border-radius: 2.5mm;
+  padding: 4.5mm 5mm;
+  background: var(--white);
+}
+.cbox .lab {
+  font-size: 7pt;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--cyan-700);
+  margin-bottom: 1.5mm;
+}
+.cbox .val { font-size: 10pt; font-weight: 600; color: var(--slate-900); line-height: 1.3; letter-spacing: -0.015em; }
+.cbox .sub { font-size: 7.8pt; color: var(--slate-500); margin-top: 1mm; line-height: 1.4; }
+
+.closing {
+  margin-top: 6mm;
+  padding: 6mm 7mm;
+  border-radius: 3mm;
+  background:
+    radial-gradient(120% 160% at 88% 10%, rgba(51,223,235,.42) 0%, rgba(51,223,235,0) 58%),
+    linear-gradient(135deg, var(--cyan-950) 0%, var(--cyan-800) 55%, var(--cyan-700) 100%);
+  color: var(--white);
+}
+.closing-inner {
+  display: grid;
+  grid-template-columns: 1fr 26mm;
+  gap: 7mm;
+  align-items: center;
+}
+.closing .qr { text-align: center; }
+.closing .qr img {
+  width: 26mm;
+  height: 26mm;
+  display: block;
+  background: var(--white);
+  border-radius: 1.6mm;
+  padding: 1.2mm;
+}
+.closing .qr span {
+  display: block;
+  margin-top: 1.8mm;
+  font-size: 6.4pt;
+  line-height: 1.32;
+  color: var(--cyan-300);
+  letter-spacing: 0.02em;
+}
+.closing h3 { color: var(--white); font-size: 14pt; margin-bottom: 2.5mm; line-height: 1.2; }
+.closing p { color: rgba(255,255,255,.90); font-size: 9.2pt; line-height: 1.5; }
+.closing .cta {
+  margin-top: 4mm;
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: var(--cyan-300);
+  letter-spacing: -0.01em;
+}
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Smart AI Solutions company and services profile: AI developer rental, automation, chatbots, integrations, analytics and AI search visibility, plus the Smart AI Solutions Education programme. Cape Town, serving South Africa." />
+<link rel="canonical" href="https://loxlyatkinson.github.io/smart-ai-solutions-brochure/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Smart AI Solutions" />
+<meta property="og:title" content="Smart AI Solutions - Company &amp; Services Profile" />
+<meta property="og:description" content="AI systems built around how your business actually works, and the skills to run them yourself." />
+<meta property="og:url" content="https://loxlyatkinson.github.io/smart-ai-solutions-brochure/" />
+<meta property="og:image" content="https://loxlyatkinson.github.io/smart-ai-solutions-brochure/assets/logo-smartai.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/logo-smartai.png" />
+<style>
+/* ---------- web-only chrome (does not affect the printed PDF) ---------- */
+@media screen {
+  body { background: #eef2f5; padding: 0 0 14mm; }
+  .page { zoom: var(--fit, 1); }
+  .webbar {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 10px 18px; margin-bottom: 14px;
+    background: linear-gradient(135deg, #083344 0%, #155e75 55%, #0891b2 100%);
+    color: #fff; font-family: "Inter", system-ui, sans-serif;
+  }
+  .webbar .wb-name { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+  .webbar .wb-sub { font-size: 12px; color: #a5f3fc; display: block; font-weight: 400; }
+  .webbar .wb-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .webbar a {
+    display: inline-block; padding: 8px 14px; border-radius: 8px;
+    font-size: 13px; font-weight: 600; text-decoration: none;
+    background: #22d3ee; color: #083344; white-space: nowrap;
+  }
+  .webbar a.ghost { background: rgba(255,255,255,.14); color: #fff; }
+  .webfoot {
+    max-width: 210mm; margin: 18px auto 0; padding: 0 12px;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 12px; color: #64748b; text-align: center;
+  }
+  .webfoot a { color: #0e7490; }
+  @media (max-width: 640px) {
+    .webbar { flex-direction: column; align-items: flex-start; }
+  }
+}
+@media print { .webbar, .webfoot { display: none !important; } }
+</style>
+</head>
+<body>
+<div class="webbar">
+  <div>
+    <span class="wb-name">Smart AI Solutions</span>
+    <span class="wb-sub">Company &amp; Services Profile &middot; 2026</span>
+  </div>
+  <div class="wb-actions">
+    <a href="smart-ai-solutions-brochure.pdf" download>Download PDF</a>
+    <a class="ghost" href="https://wa.me/27722831551">WhatsApp us</a>
+    <a class="ghost" href="https://www.smartaisolutions.co.za/">Visit the site</a>
+  </div>
+</div>
+
+
+<!-- =========================== PAGE 1 — COVER =========================== -->
+<section class="page cover">
+  <div class="cover-band"></div>
+
+  <div class="cover-logo"><img src="assets/logo-smartai.png" alt="Smart AI Solutions" /></div>
+
+  <div class="cover-eyebrow">Company &amp; Services Profile · 2026</div>
+  <h1 class="cover-title">AI systems built around<br />how your business actually<br />works — and the <em>skills</em><br />to run them yourself.</h1>
+
+  <div class="cover-body">
+    <p><strong>Smart AI Solutions</strong> is a Cape Town practice that investigates how a business really operates, embeds AI where it earns its place, and then trains the people who have to live with it. Two arms, one standard: <strong>build it properly, then hand over the keys.</strong></p>
+  </div>
+
+  <div class="cover-facts">
+    <div class="fact">
+      <div class="k">11</div>
+      <div class="v">AI and automation service lines, from embedded developers to AI search visibility</div>
+    </div>
+    <div class="fact">
+      <div class="k">10</div>
+      <div class="v">Sessions in our AI education programme, covering 30+ AI tools hands-on</div>
+    </div>
+    <div class="fact">
+      <div class="k">ZA</div>
+      <div class="v">Cape Town head office, serving businesses across South Africa</div>
+    </div>
+  </div>
+
+  <div class="cover-split">
+    <div>
+      <h4>Business Solutions</h4>
+      <p>Embedded AI developers, systems integration, chatbots and assistants, process automation, predictive analytics, CRM and WhatsApp automation, reporting, logistics AI and AI search visibility.</p>
+    </div>
+    <div>
+      <h4>Education</h4>
+      <p>Live two-day AI intensives online and in person, a ten-session transformation track, company-wide adoption programmes and AI strategy for leadership teams.</p>
+    </div>
+  </div>
+
+  <div class="cover-foot">
+    <div class="w">smartaisolutions.co.za</div>
+    <div class="m">Your Business AI Partner<br />Kuilsriver, Cape Town · Western Cape</div>
+  </div>
+</section>
+
+<!-- =========================== PAGE 2 — PROFILE: LOXLY =========================== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brandline"><img src="assets/logo-smartai.png" alt="Smart AI Solutions" /></div>
+    <div class="sect">The person behind it</div>
+  </div>
+
+  <div class="profile-top">
+    <div class="portrait"><img src="assets/loxly-headshot.png" alt="Loxly Atkinson" /></div>
+    <div>
+      <h1 class="profile-name">Loxly Atkinson</h1>
+      <div class="profile-role">Founder · Smart AI Solutions · Cape Town</div>
+      <p class="profile-hook">I am not a consultant who read about business. I sold and implemented point-of-sale systems into the South African trade for three years, so I know what a real shop floor looks like on a Saturday. Then I spent six years building the software that fixes what POS was never going to solve.</p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>Before I wrote a line of AI code I spent three years as <strong>Business Development Manager at IQ Retail's POS division</strong> in Stellenbosch, running multi-client implementations and training partners across the reseller network. Before that I was <strong>Regional Manager at Corex Partnertech</strong>, the ICT distributor, working with resellers, service providers and managed service providers. Two promotions in four years.</p>
+    <p>In 2020 I left, because I had seen the gap from the inside. I had spent years watching businesses fight the same problems that a till system was never going to solve. Not stock counting. Customers. Follow-up. The hundred small conversations a day that nobody has time for. The tools to fix that did not exist yet, so I went and built them.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="tl">
+      <div class="yr">2013 — 2017</div>
+      <div class="ttl">Regional Manager</div>
+      <div class="org">Corex Partnertech · ICT distribution. Resellers, service providers and MSPs. Two promotions.</div>
+    </div>
+    <div class="tl">
+      <div class="yr">2017 — 2020</div>
+      <div class="ttl">Business Development Manager</div>
+      <div class="org">IQ Retail, POS Division, Stellenbosch. Multi-client implementations and partner training.</div>
+    </div>
+    <div class="tl">
+      <div class="yr">2020 — now</div>
+      <div class="ttl">Founder</div>
+      <div class="org">Smart AI Solutions. Live production systems across education, retail, radio, medical, property and print.</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="mini-h">What I actually do</div>
+      <ul class="ticks">
+        <li><strong>WhatsApp sales and customer engagement.</strong> This is where South African business actually happens. In-chat ordering, payment links, live stock answers, follow-up that runs itself.</li>
+        <li><strong>AI training for your team.</strong> I spent three years training POS partners on new systems. Same job, new tools — your staff using AI properly, on your actual work.</li>
+        <li><strong>Custom builds.</strong> CRM, dashboards, automation, integrations. If it does not exist, I build it. If it exists but does not fit, I build it anyway.</li>
+        <li><strong>AI audits.</strong> I look at how you actually run and tell you the two or three places AI pays for itself first. No commitment beyond that.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="mini-h">How I work</div>
+      <ul class="ticks">
+        <li><strong>Hands-on with every deliverable.</strong> When you hire me you get me, not a junior with my logo on their email.</li>
+        <li><strong>I ship live infrastructure, not decks.</strong> Everything I have built is running and I will walk you through any of it.</li>
+        <li><strong>I sell what I can build.</strong> Which is why my scopes hold.</li>
+        <li><strong>POPIA-conscious from the first line.</strong> It is your customer data and it is your problem if it leaks.</li>
+        <li><strong>Python and TypeScript on Supabase</strong>, wired into Claude, Gemini and OpenAI. If none of that means anything to you, good. It should not have to.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>The short version.</strong> Three years inside the POS trade watching businesses lose money in the same four places. Six years building the systems that close those gaps. Every one of them scoped, built, deployed and maintained personally — including a WhatsApp platform built for a 56,000-member teachers' union and a sixteen-module broadcast console that runs a regional radio station's entire on-air operation.
+  </div>
+
+  <div class="page-foot">
+    <span>Smart AI Solutions · Company &amp; Services Profile</span>
+    <span class="pnum">02</span>
+  </div>
+</section>
+
+<!-- =========================== PAGE 3 — THE BUSINESS =========================== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brandline"><img src="assets/logo-smartai.png" alt="Smart AI Solutions" /></div>
+    <div class="sect">The business</div>
+  </div>
+
+  <div class="eyebrow">Who we are</div>
+  <h2 class="section-title">Investigation first.<br />Implementation second.</h2>
+  <div class="rule-accent"></div>
+  <p class="section-lede">Most AI projects fail because they start with a tool. We start with the business system — your SOPs, data flows, sales process, support channels, and the manual work your team repeats every week. Then we build AI into the systems you already run, and leave your people more capable than we found them.</p>
+
+  <div class="two-col" style="margin-bottom:6mm;">
+    <div>
+      <div class="mini-h">Our story</div>
+      <div class="prose">
+        <p>Smart AI Solutions was founded on a simple observation: South African businesses did not need another AI vendor. They needed a partner who would look under the bonnet first.</p>
+        <p>The practice grew out of years spent inside the IT distribution and point-of-sale trade, where the founders watched good businesses buy good software and still lose money in the gaps between systems. Today we work across education, broadcasting, property, retail, healthcare, professional services and logistics.</p>
+      </div>
+    </div>
+    <div>
+      <div class="mini-h">Leadership</div>
+      <ul class="ticks">
+        <li><strong>Loxly Atkinson — Founder.</strong> AI and automation engineering, systems architecture, WhatsApp-native platforms. Previously Business Development Manager at IQ Retail's POS division and Regional Manager at Corex Partnertech.</li>
+        <li><strong>Barend Geldenhuys — Chief Operating Officer.</strong> Eighteen-plus years in IT, including ten years at Rectron in sales and account management, and Branch Manager level at Corex IT Distribution. Negotiation, business development and client relationships.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mini-h">What we stand for</div>
+  <div class="svc-grid" style="grid-template-columns:repeat(4,1fr); gap:3.5mm; margin-bottom:6mm;">
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <h3 style="font-size:9.5pt;">Investigation-first</h3>
+      <p style="margin-bottom:0;">We diagnose before we recommend. No tool goes in until we know what it is replacing.</p>
+    </div>
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <h3 style="font-size:9.5pt;">Embedded partnership</h3>
+      <p style="margin-bottom:0;">We work inside the business as part of the team, not as an agency ticket queue.</p>
+    </div>
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <h3 style="font-size:9.5pt;">Capability, not dependency</h3>
+      <p style="margin-bottom:0;">When we step back your people should be stronger, not more reliant on us.</p>
+    </div>
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <h3 style="font-size:9.5pt;">South African context</h3>
+      <p style="margin-bottom:0;">POPIA-aware design, load-shedding resilience, same timezone, local platforms.</p>
+    </div>
+  </div>
+
+  <div class="mini-h">How an engagement runs</div>
+  <div class="strip">
+    <div class="step">
+      <div class="n">01</div>
+      <div class="t">Discovery and audit</div>
+      <div class="d">We map current workflows, systems, customer journeys, data sources and bottlenecks, and find where AI creates fast, measurable value.</div>
+    </div>
+    <div class="step">
+      <div class="n">02</div>
+      <div class="t">Prioritised roadmap</div>
+      <div class="d">We choose the highest-return use cases first, define success metrics, and agree what gets automated, what gets assisted, and what stays human.</div>
+    </div>
+    <div class="step">
+      <div class="n">03</div>
+      <div class="t">Embedded build</div>
+      <div class="d">We build with your tools and your team. You see progress in working systems, not slide decks.</div>
+    </div>
+    <div class="step">
+      <div class="n">04</div>
+      <div class="t">Measure and improve</div>
+      <div class="d">We track time saved, response times, errors reduced and lead handling, so the solution keeps improving after launch.</div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:6mm;">
+    <strong>Serving nationwide.</strong> Cape Town head office, with clients in Johannesburg, Sandton, Pretoria, Centurion, Durban, Stellenbosch and Port Elizabeth. Remote-first delivery, same timezone, same working week.
+  </div>
+
+  <div class="page-foot">
+    <span>Smart AI Solutions · Company &amp; Services Profile</span>
+    <span class="pnum">03</span>
+  </div>
+</section>
+
+<!-- =========================== PAGE 4 — BUSINESS SERVICES I =========================== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brandline"><img src="assets/logo-smartai.png" alt="Smart AI Solutions" /></div>
+    <div class="sect">Business services · 1 of 3</div>
+  </div>
+
+  <div class="eyebrow">Core service lines</div>
+  <h2 class="section-title">Build the capability.<br />Then build the systems.</h2>
+  <div class="rule-accent"></div>
+  <p class="section-lede">Six foundational service lines. Take one focused project, or work with an embedded AI partner across your whole stack.</p>
+
+  <div class="svc-grid">
+    <div class="svc">
+      <span class="tag">Core</span>
+      <h3>AI Developer Rental</h3>
+      <p>A dedicated AI developer embedded in your team on a flexible monthly basis — someone who learns your business before building anything in it.</p>
+      <ul>
+        <li>No recruitment overhead, no three-to-six-month hiring cycle</li>
+        <li>Junior, mid-level and senior seniority available</li>
+        <li>Python, OpenAI, LangChain, n8n and a wide AI toolchain</li>
+        <li>Scale monthly, with knowledge transfer built into the engagement</li>
+      </ul>
+    </div>
+
+    <div class="svc">
+      <span class="tag">Core</span>
+      <h3>AI Team Enablement</h3>
+      <p>Practical training built on your actual tools, processes and industry context, so capability stays in the building when we step back.</p>
+      <ul>
+        <li>Custom curriculum around your real workflows, not generic theory</li>
+        <li>Hands-on workshops covering three to five practical workflows</li>
+        <li>Segmented by skill level so nobody is bored or lost</li>
+        <li>Post-training support window with live question sessions</li>
+      </ul>
+    </div>
+
+    <div class="svc">
+      <span class="tag">Core</span>
+      <h3>AI Integration Services</h3>
+      <p>We investigate your ERP, CRM, accounting software, POS and custom applications, then connect AI where it matters. Nothing gets ripped out.</p>
+      <ul>
+        <li>No rip-and-replace — existing systems stay intact</li>
+        <li>Secure API connections with a structured security review</li>
+        <li>Custom middleware for South African platforms</li>
+        <li>Salesforce, SAP, Sage, Microsoft Dynamics, Shopify, WooCommerce and custom databases</li>
+      </ul>
+    </div>
+
+    <div class="svc">
+      <span class="tag">AI solutions</span>
+      <h3>AI Chatbots &amp; Assistants</h3>
+      <p>Assistants trained on your actual customer conversations, not a generic template. Website, WhatsApp, social and internal.</p>
+      <ul>
+        <li>One dashboard across WhatsApp, website, Facebook, Instagram and email</li>
+        <li>Understands context, slang and multiple languages including Afrikaans, Zulu and Xhosa</li>
+        <li>Smart escalation that hands a human the full conversation history</li>
+        <li>Lead qualification, appointment booking and CRM hand-off</li>
+      </ul>
+    </div>
+
+    <div class="svc">
+      <span class="tag">AI solutions</span>
+      <h3>Process Automation</h3>
+      <p>We map your workflows first, then automate the ones that free your team to do work worth doing.</p>
+      <ul>
+        <li>Workflow mapping to find where time and errors accumulate</li>
+        <li>Built on n8n, Make.com and Zapier, or custom where needed</li>
+        <li>Most clients self-manage their automations after handover</li>
+        <li>Real-time monitoring dashboards and ongoing support</li>
+      </ul>
+    </div>
+
+    <div class="svc">
+      <span class="tag">AI solutions</span>
+      <h3>Predictive Analytics</h3>
+      <p>Most businesses already hold the data they need to forecast. We assess what you have, then build from there.</p>
+      <ul>
+        <li>Sales and pipeline forecasting for planning cycles</li>
+        <li>Customer churn signals ahead of departure</li>
+        <li>Demand prediction to cut stockouts and overstock</li>
+        <li>Plain-language dashboards with actionable alerts</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>Smart AI Solutions · Company &amp; Services Profile</span>
+    <span class="pnum">04</span>
+  </div>
+</section>
+
+<!-- =========================== PAGE 5 — BUSINESS SERVICES II =========================== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brandline"><img src="assets/logo-smartai.png" alt="Smart AI Solutions" /></div>
+    <div class="sect">Business services · 2 of 3</div>
+  </div>
+
+  <div class="eyebrow">Applied service lines</div>
+  <h2 class="section-title">Where AI meets<br />revenue and operations.</h2>
+  <div class="rule-accent"></div>
+  <p class="section-lede">Five service lines aimed at the parts of the business that either bring money in or quietly leak it out.</p>
+
+  <div class="svc-grid">
+    <div class="svc">
+      <span class="tag">Revenue</span>
+      <h3>CRM &amp; Sales Automation</h3>
+      <p>We audit your pipeline, find the three to five places deals stall, and plug those specific gaps with AI.</p>
+      <ul>
+        <li>AI lead scoring so the team works the best opportunities first</li>
+        <li>Automated follow-up sequences that fire at the right moment</li>
+        <li>Pipeline intelligence — deal health, stalled opportunities, forecasts</li>
+        <li>Salesforce, HubSpot, Zoho, Pipedrive, Freshsales and custom CRMs</li>
+      </ul>
+    </div>
+
+    <div class="svc">
+      <span class="tag">Revenue</span>
+      <h3>WhatsApp Business Automation</h3>
+      <p>POPIA-compliant WhatsApp automation designed around how your customers already message you — because in South Africa, that is where the conversation happens.</p>
+      <ul>
+        <li>Conversation flows built from your real enquiry patterns</li>
+        <li>Rich media: catalogues, PDFs, images, location pins, interactive buttons</li>
+        <li>After-hours resolution without a human on standby</li>
+        <li>Connected to CRM, payment gateways and booking systems</li>
+      </ul>
+    </div>
+
+    <div class="svc">
+      <span class="tag">Operations</span>
+      <h3>Data Analytics &amp; Reporting</h3>
+      <p>Most dashboards fail because they were built before anyone asked which decisions they needed to support. We ask first.</p>
+      <ul>
+        <li>One consolidated view across separate data sources</li>
+        <li>Daily, weekly or monthly reports delivered automatically</li>
+        <li>Custom KPIs mapped to actual strategic objectives</li>
+        <li>Drill-down dashboards with mobile access</li>
+      </ul>
+    </div>
+
+    <div class="svc">
+      <span class="tag">Operations</span>
+      <h3>Operations &amp; Logistics AI</h3>
+      <p>No two operations are the same. We map your route patterns, staffing constraints, inventory rhythms and the workarounds your team has quietly invented.</p>
+      <ul>
+        <li>Route optimisation for fuel and time</li>
+        <li>Demand forecasting to smooth stock holding</li>
+        <li>Scheduling AI for staff, vehicles and resources</li>
+        <li>Real-time tracking of deliveries, inventory and operational KPIs</li>
+      </ul>
+    </div>
+
+    <div class="svc" style="grid-column:1 / -1;">
+      <span class="tag">New · Visibility</span>
+      <h3>GEO — AI Search Visibility</h3>
+      <p>Traditional SEO gets you ranked in Google's blue links. Generative Engine Optimisation gets you <em>cited</em> — named as the answer inside ChatGPT, Perplexity, Google AI Overviews and Gemini, where a growing share of buying research now starts.</p>
+      <ul style="columns:2; column-gap:8mm;">
+        <li>AI crawler configuration — robots.txt for ChatGPT, Perplexity and ClaudeBot, plus a maintained llms.txt</li>
+        <li>Structured data: Organization, Service, FAQPage, Article and BreadcrumbList schema</li>
+        <li>Content citability — answer-block formatting and expertise signals</li>
+        <li>Brand authority across cross-platform mentions and industry directories</li>
+        <li>Platform-specific strategy per AI engine</li>
+        <li>Monthly visibility reporting: GEO score, citation frequency, competitive position</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>Smart AI Solutions · Company &amp; Services Profile</span>
+    <span class="pnum">05</span>
+  </div>
+</section>
+
+<!-- =========================== PAGE 6 — TOOLS, REPORTS, PARTNERSHIPS =========================== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brandline"><img src="assets/logo-smartai.png" alt="Smart AI Solutions" /></div>
+    <div class="sect">Business services · 3 of 3</div>
+  </div>
+
+  <div class="eyebrow">Start free · then choose your depth</div>
+  <h2 class="section-title">Audits, reports and<br />partnership models.</h2>
+  <div class="rule-accent"></div>
+  <p class="section-lede">You do not have to commit to find out whether AI is worth it in your business. Start with a free diagnostic, take a one-off report, or move into an ongoing partnership.</p>
+
+  <div class="mini-h">Free diagnostics</div>
+  <div class="svc-grid" style="grid-template-columns:repeat(3,1fr); gap:3.5mm; margin-bottom:6mm;">
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <span class="tag">Free</span>
+      <h3 style="font-size:9.5pt;">AI Visibility Audit</h3>
+      <p style="margin-bottom:0;">Enter your website and get a 0–100 GEO score across five signals, returned as a branded report showing how visible you are to ChatGPT, Perplexity and Google AI.</p>
+    </div>
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <span class="tag">Free</span>
+      <h3 style="font-size:9.5pt;">AI Readiness Assessment</h3>
+      <p style="margin-bottom:0;">A short questionnaire that returns a readiness score, an opportunity map and the services that would move the needle first.</p>
+    </div>
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <span class="tag">Free</span>
+      <h3 style="font-size:9.5pt;">AI Savings Calculator</h3>
+      <p style="margin-bottom:0;">Two minutes to an annual savings projection and payback period for automating the manual work your team repeats.</p>
+    </div>
+  </div>
+
+  <div class="mini-h">Done-for-you reports</div>
+  <div class="svc-grid" style="grid-template-columns:repeat(4,1fr); gap:3mm; margin-bottom:5mm;">
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <h3 style="font-size:8.8pt;">GEO &amp; SEO Deep Audit</h3>
+      <p style="margin-bottom:0; font-size:7.5pt;">Generative-engine, on-page and technical examination, delivered as a prioritised fix list.</p>
+    </div>
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <h3 style="font-size:8.8pt;">AI Citation Report</h3>
+      <p style="margin-bottom:0; font-size:7.5pt;">Whether ChatGPT, Perplexity and Gemini cite you for your buyers' prompts, plus competitor gaps.</p>
+    </div>
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <h3 style="font-size:8.8pt;">Backlink Snapshot</h3>
+      <p style="margin-bottom:0; font-size:7.5pt;">Link profile tracking with week-over-week change reports and an opportunity list.</p>
+    </div>
+    <div class="svc" style="padding:3.2mm 3.4mm 3.6mm;">
+      <h3 style="font-size:8.8pt;">Website Intelligence</h3>
+      <p style="margin-bottom:0; font-size:7.5pt;">GEO, technical audit, citations, backlinks and competitor benchmarking in one document.</p>
+    </div>
+  </div>
+
+  <div class="mini-h">Ongoing partnership models</div>
+  <div class="tier-grid">
+    <div class="tier">
+      <div class="name">Foundation Partner</div>
+      <div class="who">First steps</div>
+      <ul>
+        <li>An AI specialist embedded in your team, part-time each week</li>
+        <li>We investigate and implement your first three high-impact workflows</li>
+        <li>One system integration</li>
+        <li>Dedicated email support</li>
+        <li>Monthly strategy call to map the next opportunities</li>
+      </ul>
+    </div>
+    <div class="tier feature">
+      <div class="name">Growth Partner</div>
+      <div class="who">Most popular</div>
+      <ul>
+        <li>A full-time AI developer embedded as part of your team</li>
+        <li>Up to five systems investigated and connected so data flows</li>
+        <li>Priority phone support with a defined response SLA</li>
+        <li>Weekly strategy calls</li>
+        <li>Your own project manager handling coordination</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="name">Enterprise Partner</div>
+      <div class="who">Full AI-readiness</div>
+      <ul>
+        <li>An embedded AI team working inside your business</li>
+        <li>Every system in your stack investigated and integrated</li>
+        <li>Enterprise-grade security and compliance</li>
+        <li>Round-the-clock priority support</li>
+        <li>Strategic roadmap plus change management</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:5mm;">
+    <strong>Also available:</strong> Managed AI-Visibility as an ongoing retainer, on-brand content and copy generation, and a founder-led Full AI Transformation programme spanning strategy through execution, including IT infrastructure support. <strong>Current rates for every service are quoted on request.</strong>
+  </div>
+
+  <div class="page-foot">
+    <span>Smart AI Solutions · Company &amp; Services Profile</span>
+    <span class="pnum">06</span>
+  </div>
+</section>
+
+<!-- =========================== PAGE 7 — EDUCATION OVERVIEW =========================== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brandline"><img src="assets/logo-smartai.png" alt="Smart AI Solutions" /></div>
+    <div class="sect">Smart AI Solutions Education</div>
+  </div>
+
+  <div class="eyebrow">Education</div>
+  <h2 class="section-title">The fastest way to make<br />AI real is to teach<br />the people who use it.</h2>
+  <div class="rule-accent"></div>
+  <p class="section-lede">Smart AI Solutions Education is our training arm. Live, guided, hands-on programmes that take people from cautious to capable — and give organisations a route from AI awareness to AI that is actually part of the working week.</p>
+
+  <div class="two-col" style="margin-bottom:6mm;">
+    <div>
+      <div class="mini-h">What makes it different</div>
+      <ul class="ticks">
+        <li><strong>Live and guided, never a video library.</strong> Every session is delivered in real time with demonstrations, guided activities and open question time.</li>
+        <li><strong>Hands-on from session one.</strong> Delegates work in the tools on their own laptop, on their own real tasks — not on a case study about someone else's business.</li>
+        <li><strong>Built by practitioners.</strong> The people teaching it build production AI systems for a living, so the advice survives contact with a real workday.</li>
+        <li><strong>South African context.</strong> POPIA, the national AI policy landscape, local tooling and local business realities are part of the syllabus, not a footnote.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="mini-h">Who it is for</div>
+      <ul class="ticks">
+        <li><strong>The complete beginner.</strong> You have read the headlines, never really used AI, and you are worried you have missed the boat. You have not.</li>
+        <li><strong>The dabbler.</strong> You have played with ChatGPT for the odd task and sense it can do far more — you just do not know how to get there.</li>
+        <li><strong>The regular user.</strong> You are already the AI person on your team. You want sharper prompting and a proper grip on the newest capability.</li>
+        <li><strong>The builder.</strong> You are curious about what comes after prompting: automation, AI-assisted coding, apps and agents. You do not need to be a developer.</li>
+      </ul>
+      <div class="callout" style="margin-top:4mm; font-size:8.6pt;">
+        No age limit, no grade requirement, no prerequisites. Bring a laptop and a real task you want to get off your desk.
+      </div>
+    </div>
+  </div>
+
+  <div class="mini-h">What delegates leave with</div>
+  <div class="strip" style="grid-template-columns:repeat(4,1fr);">
+    <div class="step">
+      <div class="n">01</div>
+      <div class="t">A working prompt library</div>
+      <div class="d">Reusable prompts and frameworks built around your own role, in your own brand voice.</div>
+    </div>
+    <div class="step">
+      <div class="n">02</div>
+      <div class="t">A personal adoption plan</div>
+      <div class="d">Your current workflows mapped, with the specific points where AI takes work off you.</div>
+    </div>
+    <div class="step">
+      <div class="n">03</div>
+      <div class="t">Hands-on tool fluency</div>
+      <div class="d">Thirty-plus AI platforms across writing, research, design, video, marketing and building.</div>
+    </div>
+    <div class="step">
+      <div class="n">04</div>
+      <div class="t">Ongoing community access</div>
+      <div class="d">Alumni sessions, events and a place to share what worked and what did not.</div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:6mm;">
+    <strong>Start with a free hour.</strong> Our 60-minute AI Showcase is a live, free session that demonstrates what AI can do end to end — one idea turned into research, copy, visuals and video in real time. It is the honest way to find out whether the full programme is for you. A recording is available if you cannot attend live.
+  </div>
+
+  <div class="page-foot">
+    <span>Smart AI Solutions · Company &amp; Services Profile</span>
+    <span class="pnum">07</span>
+  </div>
+</section>
+
+<!-- =========================== PAGE 8 — EDUCATION PACKAGES =========================== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brandline"><img src="assets/logo-smartai.png" alt="Smart AI Solutions" /></div>
+    <div class="sect">Education · programmes</div>
+  </div>
+
+  <div class="eyebrow">Programmes</div>
+  <h2 class="section-title">Five ways in.</h2>
+  <div class="rule-accent"></div>
+  <p class="section-lede">The same ten-session curriculum, delivered in the format that fits how your people actually learn — plus two organisation-wide programmes for teams and leadership.</p>
+
+  <div class="tier-grid" style="margin-bottom:5mm;">
+    <div class="tier">
+      <div class="name">Two-Day AI Intensive<br />— Online</div>
+      <div class="who">Individuals &amp; small teams</div>
+      <ul>
+        <li>All ten sessions, live over two consecutive days</li>
+        <li>Delivered by video conference, join from anywhere</li>
+        <li>Live question time in every session</li>
+        <li>Full resource library: templates, guides and prompt packs</li>
+        <li>Networking with the rest of the cohort</li>
+        <li>Alumni community access afterwards</li>
+      </ul>
+    </div>
+    <div class="tier feature">
+      <div class="name">Two-Day AI Intensive<br />— In Person</div>
+      <div class="who">The full experience</div>
+      <ul>
+        <li>Identical ten-session curriculum, face to face</li>
+        <li>Hosted at conference venues in major South African centres</li>
+        <li>Longer contact hours than the online format</li>
+        <li>Catering included; bring your laptop</li>
+        <li>Everything in the online programme</li>
+        <li>Room-level help while you work in the tools</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="name">Ten-Session<br />Transformation Track</div>
+      <div class="who">Paced delivery</div>
+      <ul>
+        <li>The same ten sessions, spread over a longer schedule</li>
+        <li>Part one: discovering AI — sessions one to five</li>
+        <li>Part two: building with AI — sessions six to ten</li>
+        <li>Suited to teams who cannot lose two full days</li>
+        <li>Same resources, same alumni access</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tier-grid" style="grid-template-columns:1fr 1fr;">
+    <div class="tier">
+      <div class="name">Company AI Adoption</div>
+      <div class="who">For HR, L&amp;D and department heads</div>
+      <ul>
+        <li>We begin by listening — leadership discussions, discovery workshops and practical collaboration to find where AI creates genuine value rather than new complexity</li>
+        <li>Practical training, workflow workshops and working sessions where AI solutions are co-created alongside your team</li>
+        <li>We build prompt libraries, AI-supported workflows, agents, reporting processes and responsible-use guidelines</li>
+        <li>Applied to the tools you already run, including ChatGPT, Microsoft Copilot and Claude</li>
+        <li>Flexible formats — recurring weekly sessions or a fully customised adoption programme</li>
+        <li>Support continues after the workshops, until AI is part of how the organisation works</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="name">AI Strategy &amp; Change Management</div>
+      <div class="who">For leadership and EXCO</div>
+      <ul>
+        <li>Moves the organisation beyond isolated AI experiments to one clear, business-wide direction</li>
+        <li>Executive discovery sessions and AI readiness assessment</li>
+        <li>Opportunity mapping, governance guidance and implementation planning</li>
+        <li>Clarifies where AI creates value, what risks need managing, and how people, workflows and priorities will be affected</li>
+        <li>Supports the human side: building trust, addressing uncertainty and communicating clearly with staff</li>
+        <li>Ends with a practical roadmap the leadership team owns</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:5mm;">
+    <strong>Also included at no charge:</strong> a free 60-minute AI Showcase before you commit, a free AI assessment to establish your starting point, and ongoing alumni community access once you have completed a programme. <strong>Programme fees and scheduled dates are quoted on request.</strong>
+  </div>
+
+  <div class="page-foot">
+    <span>Smart AI Solutions · Company &amp; Services Profile</span>
+    <span class="pnum">08</span>
+  </div>
+</section>
+
+<!-- =========================== PAGE 9 — SUBJECTS =========================== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brandline"><img src="assets/logo-smartai.png" alt="Smart AI Solutions" /></div>
+    <div class="sect">Education · curriculum</div>
+  </div>
+
+  <div class="eyebrow">Subjects we cover</div>
+  <h2 class="section-title">Ten sessions, from<br />&ldquo;what is AI&rdquo; to building agents.</h2>
+  <div class="rule-accent"></div>
+  <p class="section-lede">Every programme runs the same ten-session curriculum. Sessions one to five build the foundation; six to ten turn it into output.</p>
+
+  <div class="subj-grid">
+    <div class="subj">
+      <div class="num">1</div>
+      <div>
+        <h4>AI in Action</h4>
+        <p>A live demonstration where one idea becomes research, marketing copy, social posts, a blog, a website, a video, a presentation and an infographic — in front of you, in real time.</p>
+      </div>
+    </div>
+    <div class="subj">
+      <div class="num">2</div>
+      <div>
+        <h4>AI Foundations</h4>
+        <p>How we got here, the difference between narrow and general AI, machine learning, deep learning and natural language processing, how large language models are trained, and why training data shapes everything.</p>
+      </div>
+    </div>
+    <div class="subj">
+      <div class="num">3</div>
+      <div>
+        <h4>Prompt Engineering</h4>
+        <p>The single skill that multiplies every other tool. Structured prompting frameworks, cross-prompting between models, extracting and encoding your brand voice, and the interview technique that gets AI to draw ideas out of you.</p>
+      </div>
+    </div>
+    <div class="subj">
+      <div class="num">4</div>
+      <div>
+        <h4>Privacy, Ethics, POPIA and Risk</h4>
+        <p>What never to paste into a public AI tool, what free tools do with your inputs, bias and accountability, how POPIA and the national AI policy framework apply, and how to draft an AI use policy for your business.</p>
+      </div>
+    </div>
+    <div class="subj">
+      <div class="num">5</div>
+      <div>
+        <h4>Advanced ChatGPT &amp; LLM Workflows</h4>
+        <p>Beyond chatting: personas and custom instructions, custom GPTs, projects, voice, canvas and connectors, deep research, working across Excel and documents, and when to reach for a different model instead.</p>
+      </div>
+    </div>
+    <div class="subj">
+      <div class="num">6</div>
+      <div>
+        <h4>AI at Work &amp; Your Adoption Plan</h4>
+        <p>Mapping your current workflows, finding your leverage points, and writing a personal adoption plan you can start on Monday. Includes Microsoft Copilot across Word, Excel, Outlook, PowerPoint and the browser.</p>
+      </div>
+    </div>
+    <div class="subj">
+      <div class="num">7</div>
+      <div>
+        <h4>AI Design &amp; Video Production</h4>
+        <p>Generating and editing graphics, social and campaign collateral, image generation from text, video generation and editing, animated characters, AI voiceover and AI music, then final assembly.</p>
+      </div>
+    </div>
+    <div class="subj">
+      <div class="num">8</div>
+      <div>
+        <h4>AI-Powered Marketing</h4>
+        <p>Deep market and competitor research, audience and persona prompts, a month of social content from a single structured prompt, content calendars, cross-platform repurposing, lead discovery, and writing for both humans and AI search.</p>
+      </div>
+    </div>
+    <div class="subj">
+      <div class="num">9</div>
+      <div>
+        <h4>Building With AI</h4>
+        <p>Websites and web apps generated from prompts, AI-assisted code, no-code and low-code build tools, and the real difference between a language model, an automation and an autonomous agent.</p>
+      </div>
+    </div>
+    <div class="subj">
+      <div class="num">10</div>
+      <div>
+        <h4>Certification Paths &amp; What Next</h4>
+        <p>Where to pursue recognised international AI certification, the resource hubs worth following in a field that moves weekly, your full resource pack, and entry into the alumni community.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toolbox">
+    <h4>Platforms and tools covered hands-on</h4>
+    <div class="chips">
+      <span class="chip hi">ChatGPT</span><span class="chip hi">Claude</span><span class="chip hi">Google Gemini</span><span class="chip hi">Microsoft Copilot</span>
+      <span class="chip">NotebookLM</span><span class="chip">Google AI Studio</span><span class="chip">Google Analytics</span><span class="chip">Gamma</span>
+      <span class="chip">Canva</span><span class="chip">Adobe Firefly</span><span class="chip">Adobe Express</span><span class="chip">Photoshop</span>
+      <span class="chip">Illustrator</span><span class="chip">After Effects</span><span class="chip">Midjourney</span><span class="chip">Kling AI</span>
+      <span class="chip">InVideo</span><span class="chip">ElevenLabs</span><span class="chip">Suno</span><span class="chip">CapCut</span>
+      <span class="chip">Napkin</span><span class="chip">Blaze</span><span class="chip">Ocean.io</span><span class="chip">Lovable</span>
+      <span class="chip">Hostinger Horizons</span><span class="chip">WordPress</span><span class="chip">Vectorshift</span><span class="chip">Word</span>
+      <span class="chip">Excel</span><span class="chip">Outlook</span><span class="chip">PowerPoint</span><span class="chip">Google Drive</span>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>Smart AI Solutions · Company &amp; Services Profile</span>
+    <span class="pnum">09</span>
+  </div>
+</section>
+
+<!-- =========================== PAGE 10 — WORK & CONTACT =========================== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brandline"><img src="assets/logo-smartai.png" alt="Smart AI Solutions" /></div>
+    <div class="sect">Selected work &amp; contact</div>
+  </div>
+
+  <div class="eyebrow">Selected work</div>
+  <h2 class="section-title">Live systems, not pilots.</h2>
+  <div class="rule-accent"></div>
+  <p class="section-lede">Every system below is running in production. We will walk you through any of them.</p>
+
+  <div class="work-grid" style="margin-bottom:5mm;">
+    <div class="work">
+      <div class="sector">Education · Teachers' union</div>
+      <h3>NAPTOSA</h3>
+      <p>A multi-tenant, WhatsApp-native member platform built for a 56,000-member teachers' union. Unified inbox and contacts, legal casework management, multi-platform communications, and an AI command centre running the union's chatbot operations. Built on Supabase with edge functions handling live conversation at volume.</p>
+    </div>
+    <div class="work">
+      <div class="sector">Broadcasting · Community radio</div>
+      <h3>Eden FM</h3>
+      <p>A sixteen-module presenter console covering the station's whole operation: live on-air controls, listener requests arriving over WhatsApp with automatic read receipts and priority ranking, per-town weather and radar, news bulletins in Afrikaans, English and Xhosa, content scheduling, and an in-console recording studio for advertiser proof of play.</p>
+    </div>
+  </div>
+
+  <div class="mini-h">Sectors we work across</div>
+  <div class="sectors" style="margin-bottom:6mm;">
+    <span class="chip">Education &amp; unions</span><span class="chip">Broadcasting &amp; radio</span><span class="chip">Retail &amp; e-commerce</span>
+    <span class="chip">IT &amp; licensing</span><span class="chip">Real estate</span><span class="chip">Healthcare</span>
+    <span class="chip">Financial services</span><span class="chip">Legal</span><span class="chip">Logistics &amp; transport</span>
+    <span class="chip">Hospitality &amp; tourism</span><span class="chip">Manufacturing</span><span class="chip">Construction</span>
+    <span class="chip">Agriculture</span><span class="chip">Mining &amp; energy</span><span class="chip">Professional services</span>
+  </div>
+
+  <div class="contact-grid">
+    <div class="cbox">
+      <div class="lab">WhatsApp — fastest route</div>
+      <div class="val">wa.me/27722831551</div>
+      <div class="sub">Free 30-minute consultation, zero commitment</div>
+    </div>
+    <div class="cbox">
+      <div class="lab">Telephone</div>
+      <div class="val">+27 72 283 1551</div>
+      <div class="sub">Mon–Fri 08:00–18:00 · Sat 09:00–14:00</div>
+    </div>
+    <div class="cbox">
+      <div class="lab">Email</div>
+      <div class="val">loxly@smartaisolutions.co.za</div>
+      <div class="sub">Send a message any time</div>
+    </div>
+    <div class="cbox">
+      <div class="lab">Office</div>
+      <div class="val">Kuilsriver, Cape Town</div>
+      <div class="sub">53 Olinia Crescent, Rouxville, Kuilsriver, Western Cape 7580</div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <div class="closing-inner">
+      <div>
+        <h3>Start with the free assessment.</h3>
+        <p>Thirty minutes, no commitment, and you walk away knowing the two or three places AI would pay for itself first in your business. If the answer is &ldquo;not yet&rdquo;, we will tell you that too.</p>
+        <div class="cta">smartaisolutions.co.za &nbsp;·&nbsp; Smart AI Solutions (Pty) Ltd &nbsp;·&nbsp; Your Business AI Partner</div>
+      </div>
+      <div class="qr">
+        <img src="assets/brochure-qr.png" alt="Scan to open this profile online" />
+        <span>Scan to open<br />this profile online</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>Smart AI Solutions · Company &amp; Services Profile · 2026</span>
+    <span class="pnum">10</span>
+  </div>
+</section>
+
+
+<div class="webfoot">
+  Smart AI Solutions (Pty) Ltd &middot; Kuilsriver, Cape Town &middot;
+  <a href="https://www.smartaisolutions.co.za/">smartaisolutions.co.za</a>
+</div>
+<script>
+(function () {
+  var A4_PX = 794; /* 210mm at 96dpi */
+  function fit() {
+    var avail = document.documentElement.clientWidth - 12;
+    var s = Math.min(1, avail / A4_PX);
+    document.documentElement.style.setProperty('--fit', s);
+  }
+  fit();
+  window.addEventListener('resize', fit);
+})();
+</script>
+</body>
+</html>
