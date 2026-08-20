@@ -1,6 +1,6 @@
 # Client Emails
 
-Four drafts for sending the brochure, plus one HTML version.
+Six drafts for sending the brochure, plus one HTML version.
 
 | File | Send to | Attach the PDF? |
 |---|---|---|
@@ -8,7 +8,21 @@ Four drafts for sending the brochure, plus one HTML version.
 | `02-new-enquiry.txt` | Someone you have just spoken to | Yes |
 | `03-cold-intro.txt` | First contact, no prior conversation | **No.** Link only |
 | `04-education-hr.txt` | HR, L&D, department heads, training coordinators | Yes if warm |
+| `05-paul-comensa.txt` | **Paul Finnigan** specifically. PISA services plus a chapter training offer | Yes |
+| `06-paul-section15-chase.txt` | **Paul Finnigan.** The seven inputs that unlock the proposal | No |
 | `brochure-email.html` | HTML version of 01, for a mail platform | Yes |
+
+## The two Paul emails
+
+Paul Finnigan wears two hats: **client** (PISA Consulting, the Lean Leadership assessment portal you are mid-build on) and **Western Cape Chapter Chair of COMENSA**, a body of coaches and mentors.
+
+`05` uses both, in that order. It opens as his supplier, picks up his own remark that more assessment tools are coming, then offers the free sixty minute showcase to his chapter.
+
+`06` is the section 15 chase, kept deliberately separate. **Do not send them on the same day.** A services introduction that also asks for seven things reads as an invoice with a smile on it.
+
+Both are branded **LB Tec (Pty) Ltd** from `loxly@lbtec.co.za`, which is the identity Paul already has for you, with one line explaining that Smart AI Solutions is the AI and training arm of the same practice.
+
+**Neither carries a rate.** The R350 per hour on the PISA engagement is specific to that job and reduced from your standard. A number in a services email anchors the next quote against it. The sending notes inside each file say so.
 
 **Link in every email:** https://loxlyatkinson.github.io/smart-ai-solutions-brochure/
 **Attachment:** `smart-ai-solutions-brochure.pdf` (5.3 MB)

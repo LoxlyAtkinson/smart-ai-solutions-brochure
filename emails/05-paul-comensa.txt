@@ -1,0 +1,73 @@
+TO       Paul Finnigan, PISA Consulting
+         Western Cape Chapter Chair, COMENSA
+FROM     loxly@lbtec.co.za
+ATTACH   smart-ai-solutions-brochure.pdf
+
+SUBJECT LINE OPTIONS (pick one)
+  Separate to the assessment build, the full picture
+  You mentioned more assessment tools coming
+  For PISA, and a thought for the chapter
+
+PREVIEW TEXT
+  Two things. What else we can build for PISA, and something for the COMENSA membership that costs you nothing to try.
+
+---
+
+Hi Paul,
+
+Nothing to do with the assessment portal, and no action needed on this one.
+
+You said something in passing that stuck with me: that you will most certainly have several other assessment tools in the near future. I have been building against that assumption ever since, which is why the spec separates the scoring engine from the instrument. The second tool should cost a fraction of the first.
+
+But it also made me realise you have only seen the one corner of what we do. So here is the whole thing:
+
+https://loxlyatkinson.github.io/smart-ai-solutions-brochure/
+
+The PDF is attached if you prefer it that way. Smart AI Solutions is the AI and training side of the practice you already know as LB Tec. Same person, same phone, same standards.
+
+TWO PAGES WORTH YOUR TIME AS PISA
+
+Page 6 covers how ongoing work is structured. If more instruments really are coming, an ongoing arrangement is a better shape than quoting each one cold, and it is how I would rather work with you.
+
+Pages 4 and 5 are the eleven service lines. The ones nearest to what PISA does are integrations, data and reporting, and assistants trained on your own material. A coaching assistant that actually knows the 24 constructs and the skills matrix, rather than making things up, is genuinely buildable now.
+
+AND ONE THOUGHT WEARING YOUR OTHER HAT
+
+Pages 7 to 9 are the training arm, and I will be honest about why I am pointing you at them: coaches and mentors are the audience it fits best. Ten sessions, over thirty AI tools hands-on, and a full session on privacy, POPIA and where AI should not be used, which matters more in your profession than in most.
+
+We run a free sixty minute showcase. It is a live session where one idea becomes research, copy, visuals and video in front of the room. No sales pitch and no obligation on anyone.
+
+If it would be useful, I will run that for the Western Cape chapter at no charge. Worst case your members get an interesting hour. Best case some of them find something they actually use on Monday.
+
+No rush on any of this. The assessment build is the priority and that has my attention.
+
+Loxly
+
+Loxly Atkinson
+LB Tec (Pty) Ltd
+Smart AI Solutions, the AI and training arm
+loxly@lbtec.co.za
++27 72 283 1551
+smartaisolutions.co.za
+
+---
+
+NOTES FOR SENDING
+
+  Send this SEPARATELY from anything about the PISA spec. Mixing a services
+  introduction with a request for the section 15 inputs weakens both. Use
+  06-paul-section15-chase.txt for that, on a different day.
+
+  Check the phone number before sending. Your COMENSA speaker bio carries
+  083 713 2113, the Smart AI Solutions site carries +27 72 283 1551. Pick one
+  and use it consistently with Paul.
+
+  The free showcase offer is real. Do not make it if you are not prepared to
+  run it, because a chapter chair will take you up on it.
+
+  Deliberately NOT in this email: any rate. The R350 per hour on the PISA
+  engagement is specific to that job and reduced from standard. Putting any
+  number in a services email risks anchoring the next quote against it.
+
+  Also not in here: the section 15 outstanding items, the Webpartner
+  dependencies, and anything that reads as chasing him.

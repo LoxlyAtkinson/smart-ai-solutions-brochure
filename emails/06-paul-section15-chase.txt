@@ -1,0 +1,74 @@
+TO       Paul Finnigan, PISA Consulting
+FROM     loxly@lbtec.co.za
+ATTACH   nothing
+SEND     On a different day to 05-paul-comensa.txt
+
+SUBJECT LINE OPTIONS (pick one)
+  Seven answers and I can put a number on paper
+  What I need from you to quote the assessment portal
+  Assessment portal: the last few gaps
+
+PREVIEW TEXT
+  The spec is done. Seven answers from you and four things from Webpartner turn it into a proposal.
+
+---
+
+Hi Paul,
+
+The specification is finished. I have read the assessment file properly rather than taken the brief's word for it, and I have Webpartner's written answers on what the hosting can actually run.
+
+Short version: it can all be done on your existing hosting, with one exception I have designed around. Everything else checks out.
+
+To turn the spec into a proposal with a number on it, I need seven things from you.
+
+  1. Payment provider. Confirm it is Payfast and not FastPay, then the merchant
+     ID, merchant key, salt passphrase, account type and sandbox credentials.
+
+  2. Price, currency and VAT. Is PISA Consulting VAT registered, and is the
+     advertised price inclusive or exclusive?
+
+  3. Refund policy. What happens when somebody pays and never uses their
+     access, or asks for their money back.
+
+  4. Direct engagement route. I recommend individual codes. Confirm that is
+     what you want.
+
+  5. Privacy policy. Does PISA have one I can link to, and who is named as the
+     responsible party under POPIA?
+
+  6. Sender address for the report emails, and confirmation that
+     admin@pisaconsulting.com should receive a copy of every report.
+
+  7. Report design. Confirm the current design is final and should be
+     reproduced exactly in the PDF.
+
+Separately I need four things from Webpartner, which I am chasing directly: SFTP and control panel access, the assess subdomain created, a database and dedicated user, and SPF and DKIM records so the report emails actually arrive.
+
+Two of these are worth a moment rather than a quick answer.
+
+Number 2 sets the price you will live with, and changing it after the payment integration is built is not free.
+
+Number 5 matters more than it looks. The moment we store a completed assessment you are holding personal information about how someone rates their own leadership, tied to their name and employer. POPIA applies from that moment. Right now nothing is stored anywhere, so the obligation does not exist yet. It will the day we go live.
+
+Send me what you have and I will work around the gaps.
+
+Loxly
+
+Loxly Atkinson
+LB Tec (Pty) Ltd
+loxly@lbtec.co.za
++27 72 283 1551
+
+---
+
+NOTES FOR SENDING
+
+  Source: SPEC-pisa-assessment-portal.md section 15, dated 20 August 2026.
+  If you have already answered any of these, delete that line before sending.
+  Seven open items reads as thorough. Seven where two are already answered
+  reads as careless.
+
+  No rate in this email either. The number goes in the proposal, once these
+  answers let you scope it honestly.
+
+  Do not send this on the same day as 05-paul-comensa.txt.
