@@ -104,7 +104,7 @@ Other marketing skills should read this before asking the owner anything again.
 
 **Words to avoid:**
 - Any published rate, currency figure or percentage in collateral
-- "56,000 users" for NAPTOSA. The compliant framing is **"built for a 56,000-member union"**; the figure is union membership, not platform users.
+- **Any NAPTOSA membership figure.** 56,000 was withdrawn on 2026-09-17: it failed verification, traces only to the owner's own speaker notes, is contradicted three times in this repository, and the 50,000+ variant was stripped off the client's live homepage as unsourced. Write **"built for a teachers' union"** with no number. This supersedes the earlier "56,000-member union" framing.
 - HubSpot as a hands-on claim (owner confirmed 2026-07-17 it was aspirational)
 - Ash Electronics in any marketing pack
 - Any line count for the agent runtime
@@ -124,7 +124,7 @@ Other marketing skills should read this before asking the owner anything again.
 
 | Client | Sector | What was built |
 |---|---|---|
-| NAPTOSA | Teachers' union | Multi-tenant WhatsApp-native member platform built for a 56,000-member union. Unified inbox and contacts, legal casework, multi-platform comms, AI command centre. Supabase plus edge functions. |
+| NAPTOSA | Teachers' union | Multi-tenant WhatsApp-native member platform built for a teachers' union (no membership figure: see Words to avoid). Unified inbox and contacts, legal casework, multi-platform comms, AI command centre. Supabase plus edge functions. |
 | Eden FM | Community radio | Sixteen-module presenter console: live on-air controls, WhatsApp listener requests with read receipts and priority ranking, per-town weather and radar, trilingual news bulletins, scheduling, in-console recording studio for advertiser proof of play. |
 
 **Deliberately excluded:** every per-service statistic published on smartaisolutions.co.za (cost-saving percentages, integration counts, forecast accuracy, open rates, Rand savings). Owner chose named client work only. They remain on the website; they are not in the brochure.

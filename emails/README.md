@@ -38,7 +38,7 @@ Both are branded **LB Tec (Pty) Ltd** from `loxly@lbtec.co.za`, which is the ide
 
 - **No pricing.** Not in the brochure, not in the emails. Rates are quoted on request. If you put a number in an email you have undone the reason the brochure has none.
 - **No em dashes or en dashes.** House rule, applied throughout.
-- **NAPTOSA is described as a 56,000-member union**, never as 56,000 users. The figure is union membership, not platform users.
+- **No membership figure for NAPTOSA.** The 56,000 figure was withdrawn on 2026-09-17 after it failed verification, and the 50,000+ variant was stripped off the client's live homepage as unsourced. Describe it as "a teachers' union". Do not write 56,000 members, 56,000 users, or 50,000+.
 - **No certification claim.** Session 10 signposts recognised international certification. Smart AI Solutions does not issue a certificate.
 - **Cold sends carry an opt-out** and no attachment.
 

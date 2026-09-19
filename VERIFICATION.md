@@ -62,6 +62,14 @@ details come from the website `/about`. Suppressed on the owner's standing rulin
 "56,000 users" framing, HubSpot, Ash Electronics, agent runtime line counts, unevidenced
 Eden FM engagement figures, and the contested live-systems count. **PASS.**
 
+**Re-verified 2026-09-17 — the NAPTOSA membership figure is now withdrawn entirely.** The V6 pass
+above suppressed only the "56,000 users" unit and still printed "a 56,000-member teachers' union".
+That figure has since failed verification: it traces only to two lines of the owner's own speaker
+notes, this repository contradicts it three times, and the 50,000+ variant was stripped off the
+client's live homepage as unsourced. Both instances in `brochure.html` now read "a teachers' union"
+with no number, and every generated output has been rebuilt from that source. The platform itself
+remains an evidenced claim; only the membership figure was unsupported.
+
 ## V7 — Layout integrity
 
 `build/measure.mjs` compares each page's lowest normal-flow element against the 260mm content zone.
